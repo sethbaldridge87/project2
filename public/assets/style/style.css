@@ -44,6 +44,10 @@ p {
   font-size: inherit;
 }
 
+p{
+  font-size: 20px;
+}
+
 footer.page-footer {
   margin: 0;
 }
