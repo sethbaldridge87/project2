@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="javascript" src="js/index.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js"></script>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>My Better App</title>
@@ -37,12 +38,26 @@
       </ul>
     </div>
   </nav>
-            
-          
 </header>
 <body>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptas laborum tempora veritatis. Fugit harum deleniti vitae quibusdam officia aliquam, nostrum doloribus praesentium, nesciunt numquam dolor, assumenda at quos eligendi.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cupiditate odit veritatis quam iusto accusantium. Sit laboriosam fugiat eveniet recusandae laudantium eos, qui minus dolor, nam numquam dolorem? Quisquam, eveniet.<br>
+  <h1>Users</h1>
+  <div id="users" class="container"></div>
+  <div id="new_user" class="container">
+    <h2>New User</h2>
+    <form id="new_user_form">
+      <label>Name</label>
+      <input type="text" id="UName">
+      <label>Age</label>
+      <input type="number" id="UAge">
+      <label>Weight</number>
+      <input type="number" id="UWeight">
+      <label>Height</number>
+      <input type="number" id="UHeight">
+      <label>Gender</label>
+      <input type="text" id="UGender">
+      <button class="btn" id="submit_user">Submit</button>
+    </form>
+  </div>
      <!--JavaScript at end of body for optimized loading-->
      <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>

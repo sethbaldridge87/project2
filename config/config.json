@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "frnk_st7",
-    "database": "exampledb",
+    "database": "my_better_app",
     "host": "localhost",
     "dialect": "mysql"
   },

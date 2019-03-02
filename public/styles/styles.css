@@ -1,3 +1,18 @@
 .list-group-item {
   line-height: 2.5;
 }
+.user {
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 10px;
+}
+.delete_user {
+  padding: 0px 5px 5px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+.delete_user:hover {
+  cursor: pointer;
+}
