@@ -1,42 +1,28 @@
-"use strict";
-
-var fs = require("fs");
-var path = require("path");
+// Dependencies
+// =============================================================
+// var DataTypes = require('sequelize/lib/data-types');
+// This may be confusing but here Sequelize (capital) references the standard library
 var Sequelize = require("sequelize");
-var basename = path.basename(module.filename);
-var env = process.env.NODE_ENV || "development";
-var config = require(__dirname + "/../config/config.json")[env];
-var db = {};
+// sequelize (lowercase) references our connection to the DB.
+var sequelize = require("../config/connection.js");
 
-if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  var sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-  );
-}
-
-fs.readdirSync(__dirname)
-  .filter(function(file) {
-    return (
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-    );
-  })
-  .forEach(function(file) {
-    var model = sequelize.import(path.join(__dirname, file));
-    db[model.name] = model;
-  });
-
-Object.keys(db).forEach(function(modelName) {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
+// Creates a "Chirp" model that matches up with DB
+var db = sequelize.define("User info", {
+  // id: {
+  //   primaryKey: true,
+  //   type: Sequelize.INTEGER,
+  //   allowNull: false
+  // },
+  name: Sequelize.STRING,
+  age: Sequelize.INTEGER,
+  weight: Sequelize.INTEGER,
+  height: Sequelize.INTEGER,
+  gender: Sequelize.STRING
 });
+console.log("User on index.js");
+console.log(db);
+// Syncs with DB
+db.sync();
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
+// Makes the Chirp Model available for other files (will also create a table)
 module.exports = db;
