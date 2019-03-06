@@ -23,7 +23,7 @@ $(document).ready(function() {
     $(".member-height").text(data.height);
   });
   $.get("/api/user_data").then(function(data) {
-    $(".member-gender").text(data.gender);
+    $(".member-age").text(data.age);
   });
  
   $(document).on("click", ".button-edit", handlePostEdit);

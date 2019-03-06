@@ -23,6 +23,7 @@ module.exports = function(app) {
       password: req.body.password,
       name: req.body.name,
       weight: req.body.weight,
+      age: req.body.age,
     }).then(function() {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
@@ -52,6 +53,7 @@ module.exports = function(app) {
         id: req.user.id,
         name: req.user.name,
         weight: req.user.weight,
+        age: req.user.age,
         
       });
     }
