@@ -54,3 +54,8 @@ footer.page-footer {
 footer{
   text-align: center
 }
+
+#submitButton {
+  float: right;
+  margin-right: 200px; 
+}

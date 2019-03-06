@@ -14,151 +14,41 @@
 </head>
 
 <body>
-  <!-- <nav class="red" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="index.html" class="brand-logo">My Better App</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="user.html">Sign in</a></li>
-        <li><a href="progress.html">Sign Up</a></li>
-      </ul>
+        <nav>
+                <div class="nav-wrapper grey">
+                  <a href="#" class="brand-logo center">My Better App</a>
+                  <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="../index.html">Home</a></li>
+                  </ul>
+                </div>
+              </nav>
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="user.html">Sign In</a></li>
-        <li><a href="progress.html">Sign Up</a></li>
+              <h3 class="header center black-text text-lighten-2">Log What You Did</h3>
 
-
-      </ul>
-    </div>
-  </nav>  -->
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br><br><br>
-        <h1 class="header center white-text text-lighten-2">Log What You Did</h1>
-        <!-- <div class="row center">
-          <a href="" id="user" class="btn-large waves-effect waves-light red lighten-1">Sign In</a>
-        </div> -->
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="../assets/images/end.jpg" alt="conquer"></div>
-  </div>
-
-
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>What work outs did you do?</h4>
-          <p class="left-align light">˜
-                <table>
-                        <thead>
-                          <tr>
-                              <th>Workout</th>
-                              <th>Reps</th>˜
-                          </tr>
-                        </thead>
-                
-                        <tbody>
-                          <tr>
-                            <td>Push Ups</td>
-                            <td>4</td>
-                          </tr>
-                          <tr>
-                            <td>Sit Ups</td>
-                            <td>4</td>
-                          </tr>
-                          <tr>
-                            <td>Planks</td>
-                            <td>10</td>
-                          </tr>
-                        </tbody>
-                      </table>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h1 class="header center white-text text-lighten-2">You're Getting There</h1>
-            <!-- <div class="row center">
-              <a href="https://www.muscleandstrength.com/workout-routines" id="workouts" class="btn-large waves-effect waves-light red lighten-1">Workouts</a>
-            </div> -->
-            <br><br>
-          </div>
-        </div>
-      </div>
-      <div class="parallax"><img src="../assets/images/progress.jpg" alt="quote"></div>
-    </div>
-
-    <div class="container">
-      <div class="section">
-
-        <div class="row">
-          <div class="col s12 center">
-            <h3><i class="mdi-content-send brown-text"></i></h3>
-            <h4>Your Progress</h4>
-            <p class="left-align light">
-                    <table>
-                            <thead>
-                              <tr>
-                                  <th>Old Weight</th>
-                                  <th>New Weight</th>
-                              </tr>
-                            </thead>
-                    
-                            <tbody>
-                              <tr>
-                                <td>200</td>
-                                <td>205</td>
-                              </tr>
-                              <tr>
-                                <td>205</td>
-                                <td>208</td>
-                              </tr>
-                              <tr>
-                                <td>208</td>
-                                <td>215</td>
-                              </tr>
-                            </tbody>
-                          </table>
-             
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <!-- <div class="container">
-          <div class="row center">
-            <h1 class="header center white-text text-lighten-2">Eat Healthy Foods</h1>
-            <div class="row center">
-              <a href="https://www.healthline.com/nutrition/50-super-healthy-foods#section3" id="foods" class="btn-large waves-effect waves-light red lighten-1">Workouts</a>
-            </div>
-            <br><br>
-          </div>
-        </div> -->
-      </div>
-        <div class="parallax"><img src="../assets/images/push.jpg" alt="dont give up"></div>
-      
-    </div>
+              <div class="container">
+              <form id="new_user_form">
+                    <!-- <input type="text" id="UName"> -->
+                    <label>What Workout Did you do?</label>
+                    <input type="text" id="UEmail">
+                    <label>How Many Reps Did You Do?</label>
+                    <input type="number" id="UAge">
+                    <label>How Many Sets Did You Do?</label>
+                    <input type="number" id="UWeight">
+                    <!-- <label>Weight</number>
+                    <input type="text" id="UHeight">
+                    <label>Height</number>
+                    <input type="text" id="UGender">
+                    <label>Gender</label><br><br> -->
+                    <button class="btn" id="submit_user">Submit</button>
+                  </form>
+                  </div>      
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../js/materialize.js"></script>
     <script src="../js/init.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/chart.js"></script>
 
 </body>
 
