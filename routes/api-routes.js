@@ -51,5 +51,15 @@ module.exports = function(app) {
       });
     }
   });
-
+  app.put("/api/posts", function(req, res) {
+    db.User.update(req.body,
+      {
+        where: {
+          id: req.user.name
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
 };
