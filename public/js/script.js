@@ -5,14 +5,16 @@ $.get("/api/all", function(data) {
   if (data.length !== 0) {
 
     for (var i = 0; i < data.length; i++) {
-      var row = $("<div>");
+      var row = $("<div class='row'>");
       row.addClass("user");
-      row.append("<h3 data-id=" + data[i].id + ">User:</h3>");
+      row.append("<h3 data-id=" + data[i].id + "></h3>");
       row.append("<p>Name: " + data[i].name + "</p>");
-      row.append("<p>Age: " + data[i].age + "</p>");
-      row.append("<p>Height: " + data[i].height + "</p>");
-      row.append("<p>Weight: " + data[i].weight + "</p>");
-      row.append("<span class='delete_user'>x</span>");
+      // row.append("<p>Age: " + data[i].age + "</p>");
+      // row.append("<p>Height: " + data[i].height + "</p>");
+      // row.append("<p>Weight: " + data[i].weight + "</p>");
+      row.append("<a href='user?user_id=" + data[i].id + "'><button class='btn'>Select User</button></a><br><br>");
+      row.append("<button class='delete_user btn'>Delete User</button>");
+      row.append("<hr>");
       $("#users").prepend(row);
     }
   }
@@ -30,7 +32,7 @@ $(document).ready(function(){
     console.log(newUser);
     $.post("/api/new", newUser)
       .then(function(data){
-        console.log(data);
+        location.reload();
       })
   });
   $('.delete_user').click(function(){
@@ -47,4 +49,25 @@ $(document).ready(function(){
       
     });
   }
+  var url = window.location.href;   
+  console.log(url);
+  var target = url.substr(url.indexOf('_id=') + 4);
+  console.log(target);
+  $.ajax({
+    method: "GET",
+    url: "/api/single/" + target
+  })
+  .then(function(data){
+      var row = $("<div class='row'>");
+      row.addClass("user");
+      row.append("<h3 data-id=" + data.id + ">User:</h3>");
+      row.append("<p>Name: " + data.name + "</p>");
+      row.append("<p>Age: " + data.age + "</p>");
+      row.append("<p>Height: " + data.height + "</p>");
+      row.append("<p>Weight: " + data.weight + "</p>");
+      row.append("<button class='delete_user btn'>Delete User</button>");
+      row.append("<hr>");
+      $("#single_user").append(row);
+  });
+  
 });
