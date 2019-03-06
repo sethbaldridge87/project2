@@ -5,10 +5,7 @@ CREATE DATABASE my_better_app;
 
 CREATE TABLE user_info (
 id INTEGER NOT NULL AUTO_INCREMENT,
-name VARCHAR(50),
-age INTEGER(2),
-weight INTEGER(3),
-height INTEGER(7),
-gender VARCHAR(5),
-PRIMARY KEY (id)
+workout VARCHAR(50),
+reps INTEGER(3),
+sets INTEGER(3)
 );
