@@ -55,28 +55,27 @@
         <h3><i class="mdi-content-send brown-text"></i></h3>
         <div id="single_user" class="container" style="text-align: left;"></div>
 <!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1"> <span class="member-name"></span></a>
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1"> <span class="member-email"></span></a>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
   <div class="modal-content">
       <h2>Profile</h2>
-    <form id="new_user_form">
-      <input type="text" id="UName">
+    <div>
+    
       <label>Name</label>
-      <input type="number" id="UAge">
+      <h3><span class="member-name"></span></h3>
       <label>Age</label>
-      <input type="number" id="UWeight">
-      <label>Weight</number>
-      <input type="text" id="UHeight">
-      <label>Height</number>
-      <input type="text" id="UGender">
-      <label>Gender</label>
+      <h3><span class="member-age"></span></h3>
+      <label>Weight</label>
+        <h3><span class="member-weight"></span></h3>
+
       <br>
       <br>
-    </form>
+      </div>
   </div>
   <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect #90caf9 blue lighten-3 btn-flat button-edit">Edit</a>
     <a href="#!" class="modal-close waves-effect #90caf9 blue lighten-3 btn-flat">Save</a>
   </div>
 </div>
@@ -112,7 +111,30 @@
     </div>
   </div>
 </div>
-
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group todo-list">
+          <li class="list-group-item new-item">
+            <form id="todo-form">
+              <div class="container">
+                <div class="row">
+                  <div class="col-10">
+                    <input class="new-item form-control" placeholder="Add a todo" type="text" />
+                  </div>
+                  <div class="col-2">
+                    <button type="submit" class="btn btn-success">Add Todo</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </li>
+          <span class="todo-container">
+          </span>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
