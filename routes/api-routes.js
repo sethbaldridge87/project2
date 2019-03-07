@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-
+var Useer = require("../models");
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -107,18 +107,47 @@ module.exports = function(app) {
   });
 
   // PUT route for updating todos. We can get the updated todo data from req.body
-  app.put("/api/todos", function(req, res) {
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.User.update({
-      text: req.body.text,
-      complete: req.body.complete
-    }, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
+  // app.put("/api/update", function(req, res) {
+  //   // Update takes in an object describing the properties we want to update, and
+  //   // we use where to describe which objects we want to update
+  //   db.User.update({
+  //     name: req.body.name,
+  //     weight: req.body.weight,
+  //     age: req.body.age,
+
+  //   }, {
+  //     where: {
+  //       email: req.body.email
+  //     }
+  //   }).then(function(dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
+  // app.post("/api/update", function(req,res) {
+  //   console.log(req);
+  //   db.User.update(req.body,
+  //     {
+  //       where: {
+  //         email: req.body.email
+  //       }
+  //   }).then(function(results) {
+  //     res.json(results);
+  //     res.redirect("/members");
+  //   })
+  
+  // });
+  app.put("/api/update", function(req, res) {
+    console.log(req.body);
+    db.User.update(req.body,
+      {
+        where: {
+          email: req.user.email
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  }); 
+
+ 
 };
