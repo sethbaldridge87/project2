@@ -150,6 +150,52 @@ module.exports = function(app) {
       });
       
   }); 
+// GET Route for activty
+app.get("/api/active", function(req, res) {
+  db.Activity.findAll({}).then(function(dbActivity) {
+    res.json(dbActivity);
+  });
+});
+
+// POST route 
+app.post("/api/active", function(req, res) {
+  db.Activity.create({
+    text: req.body.text,
+    complete: req.body.complete
+  }).then(function(dbActivity) {
+    res.json(dbActivity);
+  })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+app.delete("/api/active:id", function(req, res) {
+  db.Activity.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(dbActivity) {
+    res.json(dbActivity);
+  });
+
+});
+
+app.put("/api/active", function(req, res) {
+  db.Activity.update({
+    text: req.body.text,
+    complete: req.body.complete
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbActivity) {
+    res.json(dbActivity);
+  })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
 
  
 };
