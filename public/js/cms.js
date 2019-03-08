@@ -52,5 +52,12 @@ $(document).ready(function () {
 
     })
 
+    $("#back").click(function (data) {
+        data.preventDefault();
+        $.get("/api/user_data").then(function(data){
+            window.location.href = "/members" 
+        });
+    });
 });
+
 
